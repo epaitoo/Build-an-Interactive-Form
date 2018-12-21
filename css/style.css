@@ -157,7 +157,9 @@ button:hover {
 	display: block;
 }
 
-
+.disabled {
+	color: #808088;
+}
 
 
 
