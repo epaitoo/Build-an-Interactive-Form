@@ -11,7 +11,7 @@ const color = document.getElementById('color'); //gets the select element with i
 
 const activities = document.querySelector('.activities');
 
-
+const payments = document.querySelector('.payments');
 
 
 
@@ -45,7 +45,7 @@ design.addEventListener('change', (e) => {
         color.selectedIndex = 1; //shows the second option in the color select element
         for (let i = 0; i < color.children.length; i++) {
             if (color.children[i].index <=3) { //if the option index is less than or equal to 3
-                color.children[0].style.display = 'none';
+                color.children[0].style.display = 'none'; //hide the first select option "Please Select a Theme"
                 color.children[i].classList.add('active');
                 color.children[i].classList.remove('none');              
             } else {
@@ -121,6 +121,35 @@ activities.addEventListener('change', () => {
         checkbox5.parentNode.classList.remove('disabled');
     } 
 
+});
+
+
+const external = document.querySelector('.external'); //Div containing paypal and Bitcoin divs
+
+    for (let i = 0; i < external.children.length; i++) {
+        external.className = 'none'; //hide external div
+    }
+
+payments.addEventListener('change', (e) => {
+    const creditCard = document.getElementById('credit-card');
+    const payPal = document.querySelector('.paypal');
+    const bitCoin = document.querySelector('.bitcoin');
+
+    if (e.target.value === 'credit card') {
+        payPal.style.display = 'none'; //hide paypal divs
+        bitCoin.style.display = 'none'; //hide bitcoin divs
+        creditCard.style.display = ''; //show the credit card div
+    } else if (e.target.value === 'paypal') {
+        payPal.style.display = '';
+        creditCard.style.display = 'none';
+        bitCoin.style.display = 'none';
+        external.className = 'active';
+    } else if (e.target.value === 'bitcoin') {
+        payPal.style.display = 'none';
+        creditCard.style.display = 'none';
+        bitCoin.style.display = '';
+        external.className = 'active';
+    }
 });
 
 
