@@ -161,6 +161,10 @@ button:hover {
 	color: #808088;
 }
 
+.hidden {
+	display:none;
+	
+}
 
 
 /* ================================= 

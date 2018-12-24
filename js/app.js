@@ -89,6 +89,13 @@ activities.addEventListener('change', () => {
         div.innerHTML = 'Total:$' + total;
     }
 
+      //   toggle visibility of total
+      if (total) {  // if not 0
+        div.classList.remove("hidden");
+    } else{
+        div.classList.add("hidden");
+     }
+
 //selection of a workshop at the same date and time -- you should disable 
     if (checkbox2.checked) { //if checkbox 2 is checked
         checkbox4.setAttribute('disabled', true); //set an attribute of 'disabled' to checkbox 4
