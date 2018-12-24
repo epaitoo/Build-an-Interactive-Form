@@ -3,33 +3,35 @@ const name = document.querySelector('#name');
 name.focus();
 
 const jobRoles = document.querySelector('#title');
+const BasicInfo = document.getElementById('basic-info'); //gets the fieldset with the id '#basic-info'
+const otherTitle = document.getElementById('other-title'); //input with type text
+
 const design = document.querySelector('#design'); //select the design id
 const color = document.getElementById('color'); //gets the select element with id "#color"
+
 const activities = document.querySelector('.activities');
 
 
 
 
+
+//for loop to hide other-title Text field
+for (let i = 0; i < BasicInfo.children.length; i++) {
+    otherTitle.className = 'none';
+}
+
 // job role text field appears when user selects "Other" from the Job Role menu 
 jobRoles.addEventListener('change', (e) => {
-    const fieldSet = jobRoles.parentNode;
-    const optionValue = jobRoles.value;
-
-        if (optionValue === 'other') {  //if the value of the jobrole === option with value 'other'
-            const label = document.createElement('label'); //then create a label
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.placeholder = 'Your Job Role';
-            label.id = 'other-title';
-            label.appendChild(input);
-            fieldSet.appendChild(label); 
-        } else {
-            const label = fieldSet.lastElementChild;
-            if (optionValue !== 'other') { 
-                label.style.display = 'none';
-            }
-        }
+    if (e.target.value === 'other') {
+        otherTitle.style.display = '';
+        otherTitle.className = 'active';
+    } else {
+        otherTitle.style.display = 'none';
+    }
 });
+
+
+
 
 // hide and disable all from drop down
 for (let i = 0; i < color.children.length; i++) {
