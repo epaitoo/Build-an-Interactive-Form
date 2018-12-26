@@ -1,18 +1,24 @@
-const form = document.getElementById('form'); //selects the whole form
+const form = document.getElementById('form');
 
 // On page load, the cursor appears in the "Name" field, ready for a user to type
 const name = document.querySelector('#name');
 name.focus();
 
-const jobRoles = document.querySelector('#title');
-const BasicInfo = document.getElementById('basic-info'); //gets the fieldset with the id '#basic-info'
-const otherTitle = document.getElementById('other-title'); //input with type text
+const BasicInfo = document.getElementById('basic-info');
 
-const design = document.querySelector('#design'); //select the design id
-const color = document.getElementById('color'); //gets the select element with id "#color"
+
+const jobRoles = document.querySelector('#title');
+const otherTitle = document.getElementById('other-title');
+
+//select the design id
+const design = document.querySelector('#design'); 
+
+//gets the select element with id "#color"
+const color = document.getElementById('color'); 
 
 const activities = document.querySelector('.activities');
 const checkBox = activities.getElementsByTagName('input');
+
 
 const payments = document.querySelector('.payments');
 const creditCard = document.getElementById('credit-card');
@@ -25,7 +31,7 @@ const cvv = document.getElementById('cvv');
 //name validation on input
 name.addEventListener('input', () => {
     const nameText = name.value;
-    const errorName = document.getElementById('error-name'); //error messsage
+    const errorName = document.getElementById('error-name');
     if (nameText) {
         name.className = 'valid';
         name.classList.remove('invalid');
@@ -66,15 +72,13 @@ email.addEventListener('input', () => {
 });
 
 
-
-
 //for loop to hide other-title Text field
 for (let i = 0; i < BasicInfo.children.length; i++) {
     otherTitle.className = 'none';
 }
-
 // job role text field appears when user selects "Other" from the Job Role menu 
 jobRoles.addEventListener('change', (e) => {
+    
     if (e.target.value === 'other') {
         otherTitle.style.display = '';
         otherTitle.className = 'active';
@@ -82,8 +86,6 @@ jobRoles.addEventListener('change', (e) => {
         otherTitle.style.display = 'none';
     }
 });
-
-
 
 
 // hide and disable all from drop down
@@ -98,7 +100,7 @@ design.addEventListener('change', (e) => {
         color.selectedIndex = 1; //shows the second option in the color select element
         for (let i = 0; i < color.children.length; i++) {
             if (color.children[i].index <=3) { //if the option index is less than or equal to 3
-                color.children[0].style.display = 'none'; //hide the first select option "Please Select a Theme"
+                color.children[0].style.display = 'none';
                 color.children[i].classList.add('active');
                 color.children[i].classList.remove('none');              
             } else {
@@ -122,6 +124,8 @@ design.addEventListener('change', (e) => {
         }
     } 
 });
+ 
+
 
 //event listerner on fieldset with class 'activities'
 activities.addEventListener('change', () => {
@@ -136,22 +140,21 @@ activities.addEventListener('change', () => {
     const errorDiv = document.getElementById('activities-error');
     // errorDiv.textContent = 'Please at least one activity must be checked';
 
-
     for (let i = 0; i < checkBox.length; i++) {
         if (checkBox[i].checked) {
             total += parseInt(checkBox[i].value);
-            errorDiv.classList.add('none'); //hide error message
+            errorDiv.classList.add('none');
             activities.classList.remove("error");
-        }   
-        div.innerHTML = 'Total:$' + total;
+        } 
+        div.innerHTML = 'Total:$' + total;  
     }
 
-      //   toggle visibility of total
-      if (total) {  // if not 0
+    //   toggle visibility of total and error div
+    if (total) {  // if not 0
         div.classList.remove("hidden");
     } else{
         div.classList.add("hidden");
-        errorDiv.classList.remove('none'); 
+        errorDiv.classList.remove('none');
         errorDiv.classList.add('active');
         activities.classList.add("error");
      }
@@ -186,8 +189,7 @@ activities.addEventListener('change', () => {
         }
         checkbox5.removeAttribute('disabled');
         checkbox5.parentNode.classList.remove('disabled');
-    } 
-
+    }   
 });
 
 
@@ -212,16 +214,16 @@ payments.addEventListener('change', (e) => {
         external.className = 'active';
         ccNum.classList.remove('error'); //removes the error class from ccNum, same applies to the others. (This is done to help in form validation)
         zip.classList.remove('error');
-        cvv.classList.remove('error');
+        cvv.classList.remove('error');     
     } else if (e.target.value === 'bitcoin') {
         payPal.style.display = 'none';
         creditCard.style.display = 'none';
         bitCoin.style.display = '';
         external.className = 'active';
-        ccNum.classList.remove('error'); //removes the error class from ccNum, same applies to the others. (This is done to help in form validation)
+        ccNum.classList.remove('error');
         zip.classList.remove('error');
         cvv.classList.remove('error');
-    }
+    }   
 });
 
 
@@ -336,18 +338,8 @@ form.addEventListener('submit', (e) => {
         input(); //show empty fields;
       } else {
         alert("Please review your entries.");
-  }
-          
+  }       
 });
-
-
-
-
-
-
-
-
-
 
 
 

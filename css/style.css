@@ -149,21 +149,21 @@ button:hover {
   clear: both;
 }
 
-.none {
-	display: none;
-}
-
 .active {
 	display: block;
 }
+
+.none {
+	display: none;
+} 
 
 .disabled {
 	color: #808088;
 }
 
 .hidden {
-	display:none;
-	
+	  display:none;
+	  
 }
 
 #activities-error {
@@ -209,6 +209,8 @@ div.exp {
 .invalid {
 	border: 2px solid #df0000;
 }
+
+
 
 
 
