@@ -1,3 +1,5 @@
+const form = document.getElementById('form'); //selects the whole form
+
 // On page load, the cursor appears in the "Name" field, ready for a user to type
 const name = document.querySelector('#name');
 name.focus();
@@ -10,6 +12,7 @@ const design = document.querySelector('#design'); //select the design id
 const color = document.getElementById('color'); //gets the select element with id "#color"
 
 const activities = document.querySelector('.activities');
+const checkBox = activities.getElementsByTagName('input');
 
 const payments = document.querySelector('.payments');
 const creditCard = document.getElementById('credit-card');
@@ -120,9 +123,8 @@ design.addEventListener('change', (e) => {
     } 
 });
 
-
+//event listerner on fieldset with class 'activities'
 activities.addEventListener('change', () => {
-    const checkBox = activities.getElementsByTagName('input');
     const div = document.getElementById('total');
     const checkbox2 = document.getElementById('2');
     const checkbox3 = document.getElementById('3');
@@ -276,7 +278,6 @@ zip.addEventListener('input', () => {
 });
 
 
-
  //cvv event listener on input
  cvv.addEventListener('input', () => {
     const errorCvv = document.getElementById('error-cvv'); // Displays error message
@@ -318,6 +319,26 @@ function input () { //function to check if all input is empty
     } 
 }
 
+
+function reload () {  // function to reload the page
+    location.reload();
+}
+
+// Event Listener to check for form Validations on submit
+form.addEventListener('submit', (e) => {
+        e.preventDefault();
+     
+    const errorClass = document.querySelectorAll('.error');
+    if (errorClass.length === 0) { //if error class length = 0
+        //form submit
+        reload();
+      } else if(input()) {
+        input(); //show empty fields;
+      } else {
+        alert("Please review your entries.");
+  }
+          
+});
 
 
 

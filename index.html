@@ -17,7 +17,7 @@
 
     <form action="index.html" method="post">
               
-      <fieldset id="basic-info">         
+      <fieldset id="basic-info" class="error">         
         <legend>Basic Info</legend>
         
         <label for="name">Name:</label>
@@ -81,7 +81,7 @@
       </fieldset>
 
 
-      <fieldset class="activities">
+      <fieldset class="activities error">
         <div id="activities-error">Please at least one activity must be checked</div>
         <legend>Register for Activities</legend>
         <label><input type="checkbox" value="200" id="1" name="all"> Main Conference — $200</label>
@@ -110,19 +110,19 @@
 
           <div class="col-6 col">
             <label for="cc-num">Card Number:</label>
-            <input id="cc-num" name="user_cc-num" type="text">
+            <input id="cc-num" name="user_cc-num" type="text" class="error">
             <div id="error-ccNum" class="none"></div>
           </div>
 
           <div class="col-3 col">
             <label for="zip">Zip Code:</label>
-            <input id="zip" name="user_zip" type="text"> 
+            <input id="zip" name="user_zip" type="text" class="error"> 
             <div id="error-zip"  class="none"></div>
           </div>
 
           <div class="col-3 col">
             <label for="cvv">CVV:</label>
-            <input id="cvv" name="user_cvv" type="text"> 
+            <input id="cvv" name="user_cvv" type="text" class="error"> 
             <div id="error-cvv"  class="none"></div>
           </div>
 
