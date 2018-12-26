@@ -166,6 +166,51 @@ button:hover {
 	
 }
 
+#activities-error {
+	color: #df0000;
+	font-weight: 500;
+	padding-top: .1em;
+	margin-top: -10px;
+	margin-bottom: 1.125em;
+}
+
+#error-email,
+#error-name {
+	color: #df0000;
+	font-size: 15px;
+	margin-bottom: 15px;
+	margin-top: -9px;
+}
+
+
+#error-ccNum,#error-zip,
+#error-cvv {
+	color: #df0000;
+	font-size: 15px;
+	margin-top: -9px;
+}
+
+.col {
+	margin-bottom: 20px;
+}
+
+div.exp {
+	position: inherit;
+	left: auto;
+	float: left;
+	margin-right: 50%;
+}
+
+
+
+/* ================================= 
+  Validation Classes
+==================================== */
+.invalid {
+	border: 2px solid #df0000;
+}
+
+
 
 /* ================================= 
   Media Queries
