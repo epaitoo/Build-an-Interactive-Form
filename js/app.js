@@ -36,13 +36,13 @@ name.addEventListener('input', () => {
         name.className = 'valid';
         name.classList.remove('invalid');
         errorName.className = 'none';
-        BasicInfo.classList.remove("error");
+        BasicInfo.classList.remove("undone"); //remove undone class
     } else {
         name.classList.remove('valid');
         name.classList.add('invalid');
         errorName.textContent = 'Please enter your name';
         errorName.className = 'active';
-        BasicInfo.classList.add("error");
+        BasicInfo.classList.add("undone");
     }
 });
 
@@ -57,17 +57,17 @@ email.addEventListener('input', () => {
         email.className = 'valid'; 
         email.classList.remove('invalid');
         errorEmail.className = "none";
-        BasicInfo.classList.remove("error");
+        BasicInfo.classList.remove("undone");
     } else if (emailText == ""){
         email.classList.remove('valid');
         email.classList.add('invalid');
-        BasicInfo.classList.add("error");
+        BasicInfo.classList.add("undone");
     } else {
         email.classList.remove('valid');
         email.classList.add('invalid');
         errorEmail.textContent = "Please enter a valid email address";
         errorEmail.className = "active";
-        BasicInfo.classList.add("error");
+        BasicInfo.classList.add("undone");
     }
 });
 
@@ -144,7 +144,7 @@ activities.addEventListener('change', () => {
         if (checkBox[i].checked) {
             total += parseInt(checkBox[i].value);
             errorDiv.classList.add('none');
-            activities.classList.remove("error");
+            activities.classList.remove("undone");
         } 
         div.innerHTML = 'Total:$' + total;  
     }
@@ -156,7 +156,7 @@ activities.addEventListener('change', () => {
         div.classList.add("hidden");
         errorDiv.classList.remove('none');
         errorDiv.classList.add('active');
-        activities.classList.add("error");
+        activities.classList.add("undone");
      }
 
 //selection of a workshop at the same date and time -- you should disable 
@@ -212,17 +212,17 @@ payments.addEventListener('change', (e) => {
         creditCard.style.display = 'none';
         bitCoin.style.display = 'none';
         external.className = 'active';
-        ccNum.classList.remove('error'); //removes the error class from ccNum, same applies to the others. (This is done to help in form validation)
-        zip.classList.remove('error');
-        cvv.classList.remove('error');     
+        ccNum.classList.remove('undone'); //removes the error class from ccNum, same applies to the others. (This is done to help in form validation)
+        zip.classList.remove('undone');
+        cvv.classList.remove('undone');     
     } else if (e.target.value === 'bitcoin') {
         payPal.style.display = 'none';
         creditCard.style.display = 'none';
         bitCoin.style.display = '';
         external.className = 'active';
-        ccNum.classList.remove('error');
-        zip.classList.remove('error');
-        cvv.classList.remove('error');
+        ccNum.classList.remove('undone');
+        zip.classList.remove('undone');
+        cvv.classList.remove('undone');
     }   
 });
 
@@ -235,7 +235,7 @@ ccNum.addEventListener('input', () => {
 
    if(ccNumInput === "") {
     errorCardNumber.textContent = "Please enter a credit card number"; 
-    ccNum.classList.add('error');
+    ccNum.classList.add('undone');
     } else if (ccNumInput) {
         errorCardNumber.textContent = "Numbers must be 13 and 16 digits long"; 
     }
@@ -243,12 +243,12 @@ ccNum.addEventListener('input', () => {
         ccNum.className = 'valid'; 
         ccNum.classList.remove('invalid');
         errorCardNumber.className = 'none'; //hide error message
-        ccNum.classList.remove('error');
+        ccNum.classList.remove('undone');
     } else { 
         ccNum.classList.remove('valid');
         ccNum.classList.add('invalid');
         errorCardNumber.className = 'active'; //show error message
-        ccNum.classList.add('error'); 
+        ccNum.classList.add('undone'); 
     }
 });
 
@@ -261,7 +261,7 @@ zip.addEventListener('input', () => {
 
     if (zipInput === "") {
         errorZip.textContent = "Please your zip code";
-        zip.classList.add('error');
+        zip.classList.add('undone');
     } else if (zipInput) {
         errorZip.textContent = "Must be 5 digits long";  
     }
@@ -270,12 +270,12 @@ zip.addEventListener('input', () => {
         zip.className = 'valid'; 
         zip.classList.remove('invalid');
         errorZip.className = 'none'; //hide error message
-        zip.classList.remove('error');
+        zip.classList.remove('undone');
     } else { 
         zip.classList.remove('valid');
         zip.classList.add('invalid');
         errorZip.className = 'active'; //show error message
-        zip.classList.add('error');
+        zip.classList.add('undone');
     }
 });
 
@@ -289,7 +289,7 @@ zip.addEventListener('input', () => {
 
     if (cvvInput === "") {
         errorCvv.textContent = "Enter your cvv number";
-        cvv.classList.add('error');
+        cvv.classList.add('undone');
     } else if (cvvInput) {
         errorCvv.textContent = "Must be 3 digits long";
        
@@ -299,12 +299,12 @@ zip.addEventListener('input', () => {
         cvv.className = 'valid'; 
         cvv.classList.remove('invalid'); 
         errorCvv.className = 'none'; //hide error message
-        cvv.classList.remove('error');
+        cvv.classList.remove('undone');
     } else {
         cvv.classList.remove('valid');
         cvv.classList.add('invalid');
         errorCvv.className = 'active'; //show error message
-        cvv.classList.add('error');
+        cvv.classList.add('undone');
     }
 });
 
@@ -330,8 +330,8 @@ function reload () {  // function to reload the page
 form.addEventListener('submit', (e) => {
         e.preventDefault();
      
-    const errorClass = document.querySelectorAll('.error');
-    if (errorClass.length === 0) { //if error class length = 0
+    const undoneClass = document.querySelectorAll('.undone');
+    if (undoneClass.length === 0) { //if undone class length = 0
         //form submit
         reload();
       } else if(input()) {
