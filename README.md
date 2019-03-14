@@ -54,3 +54,19 @@ To get an "exceeds" rating, you can expand on the project in the following ways:
 •	Program your form so that it provides a real-time validation error message for at least one text input field. Rather than providing an error message on submit, your form should check for errors and display messages as the user begins typing inside a text field. For example, if the user enters an invalid email address, the error appears as the user begins to type, and disappears as soon as the user has entered a complete and correctly formatted email address.
 
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development
+
+### Doenloading
+
+Click on the 'Clone or download' button and select 'Download Zip.'
+
+### Installing
+
+Step 1: Unzip the zip file.
+
+Step 2: Open the folder in a text editor.
+
+Using a text editor, you can view/edit the code or preview the app in a browser.
+
