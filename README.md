@@ -58,7 +58,7 @@ To get an "exceeds" rating, you can expand on the project in the following ways:
 
 These instructions will get you a copy of the project up and running on your local machine for development
 
-### Doenloading
+### Downloading
 
 Click on the 'Clone or download' button and select 'Download Zip.'
 
