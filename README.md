@@ -1,12 +1,14 @@
 # Build-an-Interactive-Form
+
+View demo [here](https://epaitoo.github.io/pagination-and-content-filter/)
+
 With this project, we are using javascript to make a web form interactive. This project is built on plain or vanilla JavaScript no frameworks. HTML & CSS already provided.
 Dynamically creating and manipulating input fields and other html elements.
 form Validation
 
-#Project Instructions
+## Project Instructions
 Project 3: Build an Interactive Form
 
-Project Instructions
 1.	Set focus on the first text field
 •	When the page loads, give focus to the first text field
 
